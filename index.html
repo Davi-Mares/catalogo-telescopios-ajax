@@ -57,15 +57,10 @@
             </div>
           </div>
           <div class="col-lg-5">
-            <!--
-              ESPAÇO DE IMAGEM (hero): troque por uma foto sua/de um telescópio.
-              Basta colocar o arquivo em assets/hero.jpg (ou ajustar o "src"
-              abaixo se usar outro nome/extensão, ex.: hero.png).
-            -->
             <div class="image-slot image-slot--hero">
               <img src="assets/hero.jpg"
                    alt="Substitua por uma descrição real da imagem, ex.: Telescópio Espacial Hubble em órbita."
-                   loading="lazy" onerror="this.remove()">
+                   loading="lazy" onerror="this.nextElementSibling.style.display='flex'; this.remove()"
               <div class="image-slot-fallback">
                 <i class="bi bi-image" aria-hidden="true"></i>
               </div>

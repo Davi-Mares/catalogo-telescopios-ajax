@@ -40,7 +40,7 @@ function mostrarErro(mostrar) {
 // onerror remove a <img> e revela o quadro de reserva no lugar.
 function construirImagemSlot(caminho, textoAlternativo, categoria) {
   const imgTag = caminho
-    ? `<img src="${caminho}" alt="${textoAlternativo}" loading="lazy" onerror="this.remove()">`
+    ? `<img src="${caminho}" alt="${textoAlternativo}" loading="lazy" onerror="this.nextElementSibling.style.display='flex'; this.remove()">`
     : "";
   return `
     <div class="image-slot image-slot--card" data-cat="${categoria}">

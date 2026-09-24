@@ -119,7 +119,7 @@ a { color: var(--accent-2); }
 .image-slot-fallback {
   position: absolute;
   inset: 0;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
