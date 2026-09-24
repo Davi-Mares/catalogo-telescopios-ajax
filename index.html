@@ -14,8 +14,13 @@
 </head>
 <body>
 
+  <!-- Fundo animado: céu estrelado (puramente decorativo) -->
+  <div id="stars" aria-hidden="true"></div>
+  <div id="stars2" aria-hidden="true"></div>
+  <div id="stars3" aria-hidden="true"></div>
+
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="navbarPrincipal">
       <div class="container">
         <a class="navbar-brand" href="#inicio"><i class="bi bi-stars me-2" aria-hidden="true"></i>Observatório Web</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
@@ -52,9 +57,20 @@
             </div>
           </div>
           <div class="col-lg-5">
-            <img src="assets/telescopio.svg"
-                 alt="Ilustração estilizada de um telescópio refletor dourado apontado para um céu estrelado, sobre um tripé."
-                 class="img-fluid hero-illustration" width="420" height="420">
+            <!--
+              ESPAÇO DE IMAGEM (hero): troque por uma foto sua/de um telescópio.
+              Basta colocar o arquivo em assets/hero.jpg (ou ajustar o "src"
+              abaixo se usar outro nome/extensão, ex.: hero.png).
+            -->
+            <div class="image-slot image-slot--hero">
+              <img src="assets/hero.jpg"
+                   alt="Substitua por uma descrição real da imagem, ex.: Telescópio Espacial Hubble em órbita."
+                   loading="lazy" onerror="this.remove()">
+              <div class="image-slot-fallback">
+                <i class="bi bi-image" aria-hidden="true"></i>
+                <span>Coloque sua imagem em <code>assets/hero.jpg</code></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -108,27 +124,46 @@
     <!-- ÁREA 3: SOBRE O PROJETO -->
     <section id="sobre" class="sobre py-5" aria-labelledby="sobre-titulo">
       <div class="container">
-        <article class="sobre-conteudo">
-          <h2 id="sobre-titulo">Sobre o projeto</h2>
-          <p>
-            O Observatório Web é um catálogo interativo desenvolvido como avaliação prática da
-            disciplina de Desenvolvimento Web. O objetivo é reunir, em um único lugar, telescópios
-            espaciais e terrestres que ampliaram a compreensão humana sobre o cosmos — de
-            observatórios centenários a instrumentos ainda em construção.
-          </p>
-          <p>
-            A listagem, a busca, o filtro por categoria e os detalhes de cada instrumento são
-            carregados dinamicamente por requisições AJAX (Fetch API), sem recarregar a página.
-            A interface foi construída com HTML5 semântico e Bootstrap 5, mantendo um layout
-            responsivo do celular ao desktop.
-          </p>
-          <ul class="lista-tecnologias">
-            <li>HTML5 semântico</li>
-            <li>CSS3 com variáveis customizadas</li>
-            <li>Bootstrap 5 (grid, navbar, cards, modal, formulários)</li>
-            <li>JavaScript (Fetch API, DOM)</li>
-          </ul>
-        </article>
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-7">
+            <article class="sobre-conteudo">
+              <h2 id="sobre-titulo">Sobre o projeto</h2>
+              <p>
+                O Observatório Web é um catálogo interativo desenvolvido como avaliação prática da
+                disciplina de Desenvolvimento Web. O objetivo é reunir, em um único lugar, telescópios
+                espaciais e terrestres que ampliaram a compreensão humana sobre o cosmos — de
+                observatórios centenários a instrumentos ainda em construção.
+              </p>
+              <p>
+                A listagem, a busca, o filtro por categoria e os detalhes de cada instrumento são
+                carregados dinamicamente por requisições AJAX (Fetch API), sem recarregar a página.
+                A interface foi construída com HTML5 semântico e Bootstrap 5, mantendo um layout
+                responsivo do celular ao desktop.
+              </p>
+              <ul class="lista-tecnologias">
+                <li>HTML5 semântico</li>
+                <li>CSS3 com variáveis customizadas</li>
+                <li>Bootstrap 5 (grid, navbar, cards, modal, formulários)</li>
+                <li>JavaScript (Fetch API, DOM)</li>
+              </ul>
+            </article>
+          </div>
+          <div class="col-lg-5">
+            <!--
+              ESPAÇO DE IMAGEM (sobre): troque por outra imagem sua.
+              Coloque o arquivo em assets/sobre.jpg (ou ajuste o "src" abaixo).
+            -->
+            <div class="image-slot image-slot--sobre">
+              <img src="assets/sobre.jpg"
+                   alt="Substitua por uma descrição real da imagem."
+                   loading="lazy" onerror="this.remove()">
+              <div class="image-slot-fallback">
+                <i class="bi bi-image" aria-hidden="true"></i>
+                <span>Coloque sua imagem em <code>assets/sobre.jpg</code></span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

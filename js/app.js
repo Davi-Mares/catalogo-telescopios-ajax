@@ -15,6 +15,7 @@ const estadoVazio = document.getElementById("estado-vazio");
 const btnTentarNovamente = document.getElementById("btn-tentar-novamente");
 const campoBusca = document.getElementById("campo-busca");
 const grupoCategorias = document.getElementById("grupo-categorias");
+const navbarPrincipal = document.getElementById("navbarPrincipal");
 
 const modalEl = document.getElementById("modalDetalhes");
 const modalTitulo = document.getElementById("modalDetalhesTitulo");
@@ -32,6 +33,23 @@ function mostrarCarregando(mostrar) {
 
 function mostrarErro(mostrar) {
   estadoErro.classList.toggle("d-none", !mostrar);
+}
+
+// Monta o "espaço de imagem" de um card: se existir um caminho de imagem,
+// tenta carregá-la; se o arquivo ainda não existir (ou falhar), o próprio
+// onerror remove a <img> e revela o quadro de reserva no lugar.
+function construirImagemSlot(caminho, textoAlternativo, categoria) {
+  const imgTag = caminho
+    ? `<img src="${caminho}" alt="${textoAlternativo}" loading="lazy" onerror="this.remove()">`
+    : "";
+  return `
+    <div class="image-slot image-slot--card" data-cat="${categoria}">
+      ${imgTag}
+      <div class="image-slot-fallback">
+        <i class="bi bi-image" aria-hidden="true"></i>
+      </div>
+    </div>
+  `;
 }
 
 // 1) Listagem dinâmica: carrega o catálogo via AJAX (Fetch API)
@@ -87,6 +105,7 @@ function renderizarLista(itens) {
     coluna.className = "col-12 col-sm-6 col-lg-4 col-xl-3";
     coluna.innerHTML = `
       <article class="card-item">
+        ${construirImagemSlot(item.imagem, `Foto ilustrativa: ${item.titulo}`, item.categoria)}
         <span class="badge-categoria" data-cat="${item.categoria}">${item.categoria}</span>
         <h3>${item.titulo}</h3>
         <p>${item.resumo}</p>
@@ -172,5 +191,11 @@ grupoCategorias.addEventListener("click", (evento) => {
 });
 
 btnTentarNovamente.addEventListener("click", carregarCatalogo);
+
+// Dá um leve destaque à barra de navegação assim que a página é rolada,
+// só como um pequeno toque dinâmico de interface.
+window.addEventListener("scroll", () => {
+  navbarPrincipal.classList.toggle("navbar-scrolled", window.scrollY > 12);
+});
 
 document.addEventListener("DOMContentLoaded", carregarCatalogo);
