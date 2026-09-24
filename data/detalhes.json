@@ -1,0 +1,82 @@
+{
+  "1": {
+    "localizacao": "Órbita terrestre baixa, a cerca de 540 km de altitude",
+    "inauguracao": "1990",
+    "operador": "NASA e ESA",
+    "tipoObservacao": "Luz visível, ultravioleta e infravermelho próximo",
+    "status": "Em operação",
+    "curiosidade": "Suas imagens de campo profundo revelaram milhares de galáxias em uma região do céu que parecia praticamente vazia."
+  },
+  "2": {
+    "localizacao": "Ponto de Lagrange L2, a cerca de 1,5 milhão de km da Terra",
+    "inauguracao": "2022 (lançado em dezembro de 2021)",
+    "operador": "NASA, ESA e Agência Espacial Canadense",
+    "tipoObservacao": "Infravermelho próximo e médio",
+    "status": "Em operação",
+    "curiosidade": "Seu espelho principal é montado a partir de 18 segmentos hexagonais de berílio revestidos de ouro."
+  },
+  "3": {
+    "localizacao": "Órbita heliocêntrica (ao redor do Sol)",
+    "inauguracao": "2009",
+    "operador": "NASA",
+    "tipoObservacao": "Luz visível, monitorando o brilho estelar",
+    "status": "Missão encerrada em 2018",
+    "curiosidade": "Ajudou a confirmar mais de 2.600 exoplanetas ao detectar minúsculas quedas de brilho causadas por trânsitos planetários."
+  },
+  "4": {
+    "localizacao": "Órbita heliocêntrica, seguindo a Terra",
+    "inauguracao": "2003",
+    "operador": "NASA",
+    "tipoObservacao": "Infravermelho",
+    "status": "Missão encerrada em 2020",
+    "curiosidade": "Foi um dos quatro 'Grandes Observatórios' da NASA, ao lado do Hubble, do Compton e do Chandra."
+  },
+  "5": {
+    "localizacao": "Órbita elíptica alta ao redor da Terra",
+    "inauguracao": "1999",
+    "operador": "NASA",
+    "tipoObservacao": "Raios-X",
+    "status": "Em operação",
+    "curiosidade": "Consegue detectar fontes de raios-X até cem vezes mais fracas do que qualquer telescópio de raios-X anterior."
+  },
+  "6": {
+    "localizacao": "Órbita elíptica ao redor da Terra",
+    "inauguracao": "2018",
+    "operador": "NASA",
+    "tipoObservacao": "Luz visível, monitorando o brilho estelar",
+    "status": "Em operação",
+    "curiosidade": "Foi projetado para observar praticamente todo o céu ao longo de sua missão, setor por setor."
+  },
+  "7": {
+    "localizacao": "Cerro Paranal, deserto do Atacama, Chile",
+    "inauguracao": "1998",
+    "operador": "ESO (Observatório Europeu do Sul)",
+    "tipoObservacao": "Luz visível e infravermelho",
+    "status": "Em operação",
+    "curiosidade": "Seus quatro telescópios de 8,2 metros podem operar juntos como um interferômetro, simulando um espelho muito maior."
+  },
+  "8": {
+    "localizacao": "Cerro Armazones, deserto do Atacama, Chile",
+    "inauguracao": "Previsão para o final desta década",
+    "operador": "ESO (Observatório Europeu do Sul)",
+    "tipoObservacao": "Luz visível e infravermelho",
+    "status": "Em construção",
+    "curiosidade": "Seu espelho principal terá cerca de 39 metros de diâmetro, formado por centenas de segmentos hexagonais."
+  },
+  "9": {
+    "localizacao": "Planalto de Chajnantor, deserto do Atacama, Chile",
+    "inauguracao": "2011",
+    "operador": "Parceria internacional (ESO, NRAO e NAOJ)",
+    "tipoObservacao": "Ondas de rádio e submilimétricas",
+    "status": "Em operação",
+    "curiosidade": "É formado por dezenas de antenas que podem ser reposicionadas para alterar a resolução das observações."
+  },
+  "10": {
+    "localizacao": "Arecibo, Porto Rico",
+    "inauguracao": "1963",
+    "operador": "Universidade da Flórida Central (até seu encerramento)",
+    "tipoObservacao": "Ondas de rádio",
+    "status": "Desativado (colapso estrutural em 2020)",
+    "curiosidade": "Por mais de 50 anos, foi o maior radiotelescópio de prato único do mundo, usado também na busca por sinais extraterrestres."
+  }
+}

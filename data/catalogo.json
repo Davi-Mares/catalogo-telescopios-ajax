@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "titulo": "Telescópio Espacial Hubble",
+    "categoria": "Espacial",
+    "resumo": "Um dos observatórios mais icônicos da história, em órbita desde 1990, responsável por imagens que mudaram a forma como vemos o universo."
+  },
+  {
+    "id": 2,
+    "titulo": "Telescópio Espacial James Webb",
+    "categoria": "Espacial",
+    "resumo": "Sucessor do Hubble, observa principalmente no infravermelho, revelando galáxias distantes e atmosferas de exoplanetas."
+  },
+  {
+    "id": 3,
+    "titulo": "Kepler",
+    "categoria": "Espacial",
+    "resumo": "Missão dedicada à busca de exoplanetas, identificou milhares de candidatos ao monitorar pequenas variações no brilho das estrelas."
+  },
+  {
+    "id": 4,
+    "titulo": "Telescópio Espacial Spitzer",
+    "categoria": "Espacial",
+    "resumo": "Observatório infravermelho que estudou desde asteroides do Sistema Solar até galáxias distantes, encerrado em 2020."
+  },
+  {
+    "id": 5,
+    "titulo": "Chandra X-ray Observatory",
+    "categoria": "Espacial",
+    "resumo": "Observa o universo em raios-X, permitindo o estudo de buracos negros, restos de supernova e aglomerados de galáxias."
+  },
+  {
+    "id": 6,
+    "titulo": "TESS",
+    "categoria": "Espacial",
+    "resumo": "Satélite que varre o céu em busca de exoplanetas ao redor de estrelas próximas e brilhantes, usando o método do trânsito."
+  },
+  {
+    "id": 7,
+    "titulo": "Very Large Telescope (VLT)",
+    "categoria": "Terrestre",
+    "resumo": "Conjunto de quatro telescópios ópticos no deserto do Atacama, um dos observatórios terrestres mais avançados do mundo."
+  },
+  {
+    "id": 8,
+    "titulo": "Extremely Large Telescope (ELT)",
+    "categoria": "Terrestre",
+    "resumo": "Em construção no Chile, será o maior telescópio óptico e infravermelho do mundo quando concluído."
+  },
+  {
+    "id": 9,
+    "titulo": "ALMA",
+    "categoria": "Terrestre",
+    "resumo": "Rede de antenas de rádio no Atacama dedicada ao estudo de regiões frias do universo, como berçários estelares e planetários."
+  },
+  {
+    "id": 10,
+    "titulo": "Observatório de Arecibo",
+    "categoria": "Terrestre",
+    "resumo": "Histórico radiotelescópio em Porto Rico, utilizado por décadas em pesquisas de rádio astronomia antes de sua desativação."
+  }
+]

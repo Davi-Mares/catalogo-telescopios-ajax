@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Observatório Web — Catálogo de Telescópios</title>
+  <meta name="description" content="Catálogo interativo de telescópios e observatórios astronômicos, com busca, filtros e detalhes carregados via AJAX.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#inicio"><i class="bi bi-stars me-2" aria-hidden="true"></i>Observatório Web</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menu de navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ÁREA 1: APRESENTAÇÃO -->
+    <section id="inicio" class="hero" aria-labelledby="hero-titulo">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-7">
+            <h1 id="hero-titulo">Um catálogo para explorar os olhos da humanidade voltados ao céu</h1>
+            <p class="lead hero-lead">
+              Do Hubble em órbita às antenas do deserto do Atacama, conheça telescópios e
+              observatórios que mudaram o que sabemos sobre o universo. Busque, filtre e abra
+              os detalhes de cada instrumento sem sair da página.
+            </p>
+            <div class="d-flex gap-3 flex-wrap">
+              <a href="#catalogo" class="btn btn-accent btn-lg">Explorar o catálogo</a>
+              <a href="#sobre" class="btn btn-outline-light btn-lg">Sobre o projeto</a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <img src="assets/telescopio.svg"
+                 alt="Ilustração estilizada de um telescópio refletor dourado apontado para um céu estrelado, sobre um tripé."
+                 class="img-fluid hero-illustration" width="420" height="420">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÁREA 2: CATÁLOGO -->
+    <section id="catalogo" class="catalogo py-5" aria-labelledby="catalogo-titulo">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-lg-8">
+            <h2 id="catalogo-titulo">Catálogo de telescópios</h2>
+            <p class="text-muted">Os itens abaixo são carregados por requisição AJAX a partir de um arquivo JSON.</p>
+          </div>
+        </div>
+
+        <form class="filtros row g-3 align-items-end mb-4" role="search" aria-label="Busca e filtro do catálogo">
+          <div class="col-md-6">
+            <label for="campo-busca" class="form-label">Buscar por nome ou palavra-chave</label>
+            <input type="search" class="form-control" id="campo-busca"
+                   placeholder="Ex.: infravermelho, Chile, exoplanetas...">
+          </div>
+          <div class="col-md-6">
+            <span class="form-label d-block" id="rotulo-categorias">Filtrar por categoria</span>
+            <div class="btn-group" role="group" aria-labelledby="rotulo-categorias" id="grupo-categorias">
+              <button type="button" class="btn btn-filtro active" data-categoria="todos">Todos</button>
+              <button type="button" class="btn btn-filtro" data-categoria="Espacial">Espacial</button>
+              <button type="button" class="btn btn-filtro" data-categoria="Terrestre">Terrestre</button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Estados da interface -->
+        <div id="estado-carregando" class="text-center py-5" role="status">
+          <div class="spinner-border" aria-hidden="true"></div>
+          <p class="mt-3 text-muted">Carregando catálogo...</p>
+        </div>
+
+        <div id="estado-erro" class="alert alert-erro d-none" role="alert">
+          <p class="mb-3">Não foi possível carregar o catálogo. Verifique sua conexão ou se o servidor local está em execução.</p>
+          <button type="button" class="btn btn-outline-light btn-sm" id="btn-tentar-novamente">Tentar novamente</button>
+        </div>
+
+        <div id="estado-vazio" class="text-center py-5 d-none">
+          <p class="text-muted">Nenhum item encontrado para os filtros aplicados.</p>
+        </div>
+
+        <div id="lista-catalogo" class="row g-4" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ÁREA 3: SOBRE O PROJETO -->
+    <section id="sobre" class="sobre py-5" aria-labelledby="sobre-titulo">
+      <div class="container">
+        <article class="sobre-conteudo">
+          <h2 id="sobre-titulo">Sobre o projeto</h2>
+          <p>
+            O Observatório Web é um catálogo interativo desenvolvido como avaliação prática da
+            disciplina de Desenvolvimento Web. O objetivo é reunir, em um único lugar, telescópios
+            espaciais e terrestres que ampliaram a compreensão humana sobre o cosmos — de
+            observatórios centenários a instrumentos ainda em construção.
+          </p>
+          <p>
+            A listagem, a busca, o filtro por categoria e os detalhes de cada instrumento são
+            carregados dinamicamente por requisições AJAX (Fetch API), sem recarregar a página.
+            A interface foi construída com HTML5 semântico e Bootstrap 5, mantendo um layout
+            responsivo do celular ao desktop.
+          </p>
+          <ul class="lista-tecnologias">
+            <li>HTML5 semântico</li>
+            <li>CSS3 com variáveis customizadas</li>
+            <li>Bootstrap 5 (grid, navbar, cards, modal, formulários)</li>
+            <li>JavaScript (Fetch API, DOM)</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape py-4">
+    <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+      <p class="mb-0 small">Observatório Web — Projeto acadêmico, Desenvolvimento Web (UNEMAT).</p>
+      <p class="mb-0 small text-muted">Dados reunidos para fins didáticos.</p>
+    </div>
+  </footer>
+
+  <!-- Modal de detalhes (componente interativo do Bootstrap) -->
+  <div class="modal fade" id="modalDetalhes" tabindex="-1" aria-labelledby="modalDetalhesTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="modalDetalhesTitulo">Detalhes</h2>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body" id="modalDetalhesCorpo">
+          <!-- preenchido via JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
